@@ -1,0 +1,27 @@
+<ion-view title="Search">
+  <ion-content class="padding">
+    <!-- Search Input Control -->
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search"
+               ng-model="food.info"
+               ng-blur="select()"
+               placeholder="Search calories percentage in foods">
+      </label>
+
+    </div>
+
+    <!-- Show List -->
+    <ion-list>
+      <ion-item ng-repeat="item in details">
+        <h2>Brand Name: {{item.fields.brand_name}}</h2>
+        <h3>{{item.fields.item_name}}</h3>
+        <p>Calories: <b>{{item.fields.nf_calories}}</b></p>
+
+      </ion-item>
+
+
+    </ion-list>
+  </ion-content>
+</ion-view>

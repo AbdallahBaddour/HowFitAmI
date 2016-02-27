@@ -1,0 +1,49 @@
+<ion-view title="Caloriyat">
+
+  <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="caloriyatCtrl">
+    <form name="bmiform" class="list" ng-submit="bmi(bmiform)" novalidate="novalidate">
+      <label class="item item-input" ng-class="{'has-error':bmiform.weight.$invalid}">
+        <span class="input-label">Weight:</span>
+        <input name="weight" ng-model="formData.weight" placeholder="in kg" type="text" ng-required="true"
+               ng-pattern="/^[0-9]*$/">
+      </label>
+      <div class="form-errors"
+           ng-messages="bmiform.weight.$error">
+        <div ng-messages-include="templates/form-errors.html">
+        </div>
+
+      </div>
+      <label class="item item-input" ng-class="{'has-error':bmiform.heigh.$invalid}">
+        <span class="input-label">Heigh:</span>
+        <input name="heigh" ng-model="formData.heigh" placeholder="in cm" type="text" ng-required="true"
+               ng-pattern="/^[0-9]*$/">
+      </label>
+      <div class="form-errors"
+           ng-messages="bmiform.heigh.$error">
+        <div ng-messages-include="templates/form-errors.html">
+        </div>
+
+      </div>
+      <button type="submit" class="button button-assertive button-block ">How Fit Am I?</button>
+    </form>
+
+
+    <div class="spacer" style="width: 283px; height: 36px;"></div>
+    <form name="cpdform" class="list" ng-submit="cpd(cpdform)" novalidate="novalidate">
+      <ion-radio value="male" ng-model="user.gender" name="gender" required>Male</ion-radio>
+      <ion-radio value="female" ng-model="user.gender" name="gender" required>Female</ion-radio>
+
+      <div ng-show="user.gender == 'female'" class="item item-input item-select" name="age">
+        <div class="input-label">
+          Age:
+        </div>
+        <select name="age" ng-model="user.age">
+          <option value="op1">above 24</option>
+          <option value="op2" ng-selected="true">below 24</option>
+        </select>
+      </div>
+      <button type="submit" class="button button-balanced button-block ">How Much Should I eat?</button>
+    </form>
+
+  </ion-content>
+</ion-view>
