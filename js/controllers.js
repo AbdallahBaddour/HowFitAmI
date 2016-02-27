@@ -135,7 +135,8 @@ app.controller('SearchCtrl', function ($scope, $http, $ionicPopup, $ionicLoading
     //console.log("search for: ", $scope.food.info);
     if ($scope.food.info != ""){
       $ionicLoading.show();
-      $http.get("https://api.nutritionix.com/v1_1/search/" + $scope.food.info + "?results=0%3A20&cal_min=0&cal_max=50000&fields=nf_calories%2Citem_name%2Cbrand_name%2Citem_id%2Cbrand_idcalories%2Citem_name%2Citem_id&appId=97f47727&appKey=fe705b68fd70825becdd84be91523a86")
+      //You will get the APP ID and KEY when you create a free account on http://www.nutritionix.com/business/api
+      $http.get("https://api.nutritionix.com/v1_1/search/" + $scope.food.info + "?results=0%3A20&cal_min=0&cal_max=50000&fields=nf_calories%2Citem_name%2Cbrand_name%2Citem_id%2Cbrand_idcalories%2Citem_name%2Citem_id&appId=YOUR_APP_ID&appKey=YOUR_APP_KEY")
         .then(function (response) {
 
           if (response.data.max_score == null) {
