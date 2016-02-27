@@ -1,7 +1,7 @@
 # HowFitAmI
 Simple BMI Calculator App Created By [@BaddourAbdallah](http://twitter.com/baddourabdallah) Using [Ionic Framework](http://ionicframework.com/).
 
-This was one from the first apps i created while learning Ionic Framework.
+This was one from the first apps i created while learning Ionic Framework, and the first app we made in class while learning Android 3 years ago.
 
 <b>The App has 2 Tabs:</b>
 
